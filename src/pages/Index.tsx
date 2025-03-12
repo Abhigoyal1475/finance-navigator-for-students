@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Hero from '@/components/Hero';
@@ -7,7 +6,7 @@ import ExpandableSection from '@/components/ExpandableSection';
 import FaqSection from '@/components/FaqSection';
 import CtaSection from '@/components/CtaSection';
 import Footer from '@/components/Footer';
-import { toast } from '@/components/ui/sonner';
+import { toast } from 'sonner';
 
 // Types for our topics
 interface Topic {
@@ -264,14 +263,10 @@ const topics: Topic[] = [
   }
 ];
 
-// Add framer-motion and handle dependencies
-<lov-add-dependency>framer-motion@latest</lov-add-dependency>
-
 const Index = () => {
   const [activeTopicId, setActiveTopicId] = useState<string | null>(null);
   const [expandedSectionId, setExpandedSectionId] = useState<string | null>(null);
   
-  // Show a welcome toast when the page loads
   useEffect(() => {
     const timer = setTimeout(() => {
       toast("Welcome to the Finance Guide", {
@@ -286,7 +281,6 @@ const Index = () => {
     setActiveTopicId(topicId);
     setExpandedSectionId(topicId);
     
-    // Scroll to the expanded section
     setTimeout(() => {
       document.getElementById('topic-sections')?.scrollIntoView({ 
         behavior: 'smooth',
