@@ -15,9 +15,9 @@ const Hero = () => {
         <img 
           src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80" 
           alt="Background" 
-          className="w-full h-full object-cover opacity-10"
+          className="w-full h-full object-cover opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-50/80 to-white/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50/70 to-white/80"></div>
       </div>
       
       {/* Background decoration */}
@@ -25,18 +25,18 @@ const Hero = () => {
       <div className="absolute bottom-20 right-10 w-72 h-72 bg-indigo-200/30 rounded-full blur-3xl animate-pulse-soft"></div>
       
       {/* Content */}
-      <div className="relative z-10 max-w-4xl text-center">
+      <div className="relative z-10 max-w-3xl mx-auto text-center px-4">
         <div className="inline-block mb-3 px-3 py-1 bg-blue-100/80 backdrop-blur-2xs rounded-full">
           <p className="text-blue-800 text-sm font-medium">
             Finance Guide for International Students
           </p>
         </div>
         
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-800 animate-fade-in">
-          Master Your Finances as an International&nbsp;Student
+        <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-700 to-indigo-800 animate-fade-in">
+          Master Your Finances as an International Student
         </h1>
         
-        <p className="text-lg md:text-xl text-slate-700 mb-10 max-w-3xl mx-auto animate-fade-in animate-delay-200">
+        <p className="text-base md:text-lg text-slate-700 mb-10 max-w-2xl mx-auto animate-fade-in animate-delay-200">
           Set up your bank account, understand SSN benefits, and find the best credit cards—all in one place.
         </p>
         
