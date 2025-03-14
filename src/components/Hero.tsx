@@ -49,20 +49,6 @@ const Hero = () => {
           <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
         </Button>
       </div>
-      
-      {/* Floating elements */}
-      <div className="absolute top-1/4 left-10 md:left-20 w-16 h-16 rounded-full glass flex items-center justify-center animate-float">
-        <span className="text-3xl">🏦</span>
-      </div>
-      <div className="absolute bottom-1/4 right-10 md:right-20 w-16 h-16 rounded-full glass flex items-center justify-center animate-float animate-delay-300">
-        <span className="text-3xl">💳</span>
-      </div>
-      <div className="absolute top-1/3 right-16 md:right-32 w-12 h-12 rounded-full glass flex items-center justify-center animate-float animate-delay-200">
-        <span className="text-2xl">💰</span>
-      </div>
-      <div className="absolute bottom-1/3 left-16 md:left-32 w-12 h-12 rounded-full glass flex items-center justify-center animate-float animate-delay-100">
-        <span className="text-2xl">🆔</span>
-      </div>
     </section>
   );
 };
