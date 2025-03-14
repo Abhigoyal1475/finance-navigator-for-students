@@ -8,9 +8,32 @@ interface TopicCardProps {
   title: string;
   onClick: () => void;
   isActive: boolean;
+  variant?: 'card' | 'sidebar';
 }
 
-const TopicCard = ({ icon, title, onClick, isActive }: TopicCardProps) => {
+const TopicCard = ({ icon, title, onClick, isActive, variant = 'card' }: TopicCardProps) => {
+  if (variant === 'sidebar') {
+    return (
+      <motion.div
+        initial={{ opacity: 0, x: -10 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.3 }}
+        onClick={onClick}
+        className={cn(
+          "p-2 rounded-lg cursor-pointer",
+          "flex items-center gap-3",
+          "transition-all duration-200",
+          isActive 
+            ? "bg-blue-100/70 text-blue-800" 
+            : "hover:bg-blue-50/50 text-slate-700 hover:text-blue-800"
+        )}
+      >
+        <div className="text-xl">{icon}</div>
+        <h3 className="font-medium text-sm">{title}</h3>
+      </motion.div>
+    );
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}

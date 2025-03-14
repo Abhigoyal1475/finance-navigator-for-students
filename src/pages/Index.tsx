@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Hero from '@/components/Hero';
@@ -6,7 +7,9 @@ import ExpandableSection from '@/components/ExpandableSection';
 import FaqSection from '@/components/FaqSection';
 import CtaSection from '@/components/CtaSection';
 import Footer from '@/components/Footer';
+import SidebarOverview from '@/components/SidebarOverview';
 import { toast } from 'sonner';
+import { Menu, X } from 'lucide-react';
 
 // Types for our topics
 interface Topic {
@@ -266,6 +269,7 @@ const topics: Topic[] = [
 const Index = () => {
   const [activeTopicId, setActiveTopicId] = useState<string | null>(null);
   const [expandedSectionId, setExpandedSectionId] = useState<string | null>(null);
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
   
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -281,6 +285,11 @@ const Index = () => {
     setActiveTopicId(topicId);
     setExpandedSectionId(topicId);
     
+    // Close sidebar on mobile when topic is selected
+    if (window.innerWidth < 768) {
+      setIsSidebarOpen(false);
+    }
+    
     setTimeout(() => {
       document.getElementById('topic-sections')?.scrollIntoView({ 
         behavior: 'smooth',
@@ -293,59 +302,100 @@ const Index = () => {
     setExpandedSectionId(expandedSectionId === sectionId ? null : sectionId);
   };
   
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+  
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white overflow-x-hidden">
       <Hero />
       
-      <section id="topics" className="py-20 px-4">
+      {/* Mobile Sidebar Toggle */}
+      <div className="md:hidden fixed top-4 left-4 z-50">
+        <button
+          onClick={toggleSidebar}
+          className="bg-white p-2 rounded-full shadow-md"
+          aria-label={isSidebarOpen ? "Close sidebar" : "Open sidebar"}
+        >
+          {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+      
+      <div className="relative pt-16 pb-20 px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="text-center mb-8 md:mb-12"
           >
-            <h2 className="text-3xl font-bold mb-4">Essential Financial Topics</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4" id="topics">Essential Financial Topics</h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
               Click on a topic to learn everything you need to know about managing your finances as an international student in the US.
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {topics.map((topic) => (
-              <TopicCard
-                key={topic.id}
-                icon={topic.icon}
-                title={topic.title}
-                onClick={() => handleTopicClick(topic.id)}
-                isActive={activeTopicId === topic.id}
+          <div className="flex flex-col md:flex-row gap-6">
+            {/* Sidebar - fixed position on mobile */}
+            <div className={`
+              fixed md:static top-0 left-0 h-screen md:h-auto w-3/4 md:w-64 
+              transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0
+              transition-transform duration-300 ease-in-out z-40
+              overflow-y-auto md:overflow-visible
+              md:block
+            `}>
+              <SidebarOverview 
+                topics={topics} 
+                activeTopicId={activeTopicId} 
+                setActiveTopic={handleTopicClick} 
+                className="md:sticky md:top-4"
               />
-            ))}
+            </div>
+            
+            {/* Overlay for mobile */}
+            {isSidebarOpen && (
+              <div 
+                className="fixed inset-0 bg-black/30 z-30 md:hidden"
+                onClick={() => setIsSidebarOpen(false)}
+              />
+            )}
+            
+            <div className="md:flex-1">
+              {/* Mobile card view - show only on mobile if no topic is selected */}
+              <div className="grid grid-cols-2 md:hidden gap-4 mb-8">
+                {activeTopicId === null && topics.map((topic) => (
+                  <TopicCard
+                    key={topic.id}
+                    icon={topic.icon}
+                    title={topic.title}
+                    onClick={() => handleTopicClick(topic.id)}
+                    isActive={activeTopicId === topic.id}
+                  />
+                ))}
+              </div>
+              
+              {/* Topic sections */}
+              <section id="topic-sections" className="space-y-6">
+                {topics.map((topic) => (
+                  <ExpandableSection
+                    key={topic.id}
+                    icon={topic.icon}
+                    title={topic.title}
+                    isExpanded={expandedSectionId === topic.id}
+                    onClick={() => handleSectionClick(topic.id)}
+                  >
+                    {topic.content}
+                  </ExpandableSection>
+                ))}
+              </section>
+            </div>
           </div>
         </div>
-      </section>
-      
-      <section id="topic-sections" className="py-10 px-4">
-        <div className="max-w-4xl mx-auto space-y-6">
-          {topics.map((topic) => (
-            <ExpandableSection
-              key={topic.id}
-              icon={topic.icon}
-              title={topic.title}
-              isExpanded={expandedSectionId === topic.id}
-              onClick={() => handleSectionClick(topic.id)}
-            >
-              {topic.content}
-            </ExpandableSection>
-          ))}
-        </div>
-      </section>
+      </div>
       
       <FaqSection />
-      
       <CtaSection />
-      
       <Footer />
     </div>
   );
