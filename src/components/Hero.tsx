@@ -20,10 +20,6 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-blue-50/70 to-white/80"></div>
       </div>
       
-      {/* Background decoration */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-blue-200/30 rounded-full blur-3xl animate-pulse-soft"></div>
-      <div className="absolute bottom-20 right-10 w-72 h-72 bg-indigo-200/30 rounded-full blur-3xl animate-pulse-soft"></div>
-      
       {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto text-center px-4">
         <div className="inline-block mb-3 px-3 py-1 bg-blue-100/80 backdrop-blur-2xs rounded-full">

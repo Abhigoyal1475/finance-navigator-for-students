@@ -42,12 +42,12 @@ const CtaSection = () => {
             </div>
             <h3 className="text-xl font-bold mb-2">Chase Student Checking</h3>
             <p className="text-slate-700 mb-4">
-              Sign up for a Chase Student Checking Account and earn $100 when you set up direct deposit within 90 days.
+              Sign up for a Chase Student Checking Account and enjoy no monthly fees if you're under 24 years old. Access to 16,000+ ATMs nationwide and powerful mobile banking tools.
             </p>
             <div className="bg-blue-50 p-3 rounded-lg mb-6">
               <p className="text-sm font-medium text-blue-800 flex items-center gap-2">
                 <Gift size={16} />
-                <span>Referral Bonus: $100 after first direct deposit</span>
+                <span>Referral Bonus: $100 after first direct deposit + exclusive $25 Amazon gift card through our link</span>
               </p>
             </div>
             <Button className="w-full group">
@@ -68,12 +68,12 @@ const CtaSection = () => {
             </div>
             <h3 className="text-xl font-bold mb-2">Discover It Student Card</h3>
             <p className="text-slate-700 mb-4">
-              Apply for the Discover It Student Card with no SSN required and enjoy 5% cashback on rotating categories.
+              Apply for the Discover It Student Card with no SSN required for international students. Enjoy 5% cashback on rotating categories and no annual fee or foreign transaction fees.
             </p>
             <div className="bg-indigo-50 p-3 rounded-lg mb-6">
               <p className="text-sm font-medium text-indigo-800 flex items-center gap-2">
                 <Gift size={16} />
-                <span>Referral Bonus: $50 statement credit + cashback match in first year</span>
+                <span>Referral Bonus: $50 statement credit + cashback match for your entire first year (doubles all rewards)</span>
               </p>
             </div>
             <Button className="w-full group">
@@ -93,7 +93,7 @@ const CtaSection = () => {
           >
             <h3 className="text-lg font-bold mb-2">More Bank & Credit Card Referrals</h3>
             <p className="text-slate-700 mb-4">
-              We have additional referral links for Bank of America, Citibank, Wells Fargo, and Capital One products. 
+              We have additional referral links for Bank of America ($100 bonus + $50 direct deposit bonus), Citibank, Wells Fargo ($50 with referral code), and Capital One products ($75 bonus). 
               Contact us to get specific referral links for these institutions.
             </p>
             <Button variant="outline" className="group">
