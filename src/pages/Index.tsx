@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Hero from '@/components/Hero';
@@ -7,6 +8,7 @@ import FaqSection from '@/components/FaqSection';
 import CtaSection from '@/components/CtaSection';
 import Footer from '@/components/Footer';
 import SidebarOverview from '@/components/SidebarOverview';
+import GoogleAd from '@/components/GoogleAd';
 import { Menu, X } from 'lucide-react';
 
 // Types for our topics
@@ -435,6 +437,11 @@ const Index = () => {
             </p>
           </motion.div>
           
+          {/* Google Ad Banner - Top of Page */}
+          <div className="mb-10">
+            <GoogleAd type="banner" className="mx-auto" />
+          </div>
+          
           <div className="flex flex-col md:flex-row gap-6">
             {/* Sidebar - fixed position on mobile */}
             <div className={`
@@ -489,6 +496,11 @@ const Index = () => {
                 ))}
               </section>
             </div>
+          </div>
+          
+          {/* Google Ad Banner - Middle of Page */}
+          <div className="my-12">
+            <GoogleAd type="banner" className="mx-auto" />
           </div>
         </div>
       </div>
