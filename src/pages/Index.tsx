@@ -30,22 +30,42 @@ const topics: Topic[] = [
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-4 bg-blue-50 rounded-lg">
             <h4 className="font-medium mb-2">Chase Bank</h4>
-            <p className="text-sm text-slate-700">No monthly maintenance fee for students under 24 years old. Extensive ATM network with 16,000+ ATMs nationwide. Mobile banking app with Zelle for instant transfers. No minimum balance required to maintain the account.</p>
+            <ul className="text-sm text-slate-700 list-disc pl-4 space-y-1">
+              <li>No monthly maintenance fee for students under 24 years old</li>
+              <li>Extensive ATM network with 16,000+ ATMs nationwide</li>
+              <li>Mobile banking app with Zelle for instant transfers</li>
+              <li>No minimum balance required to maintain the account</li>
+            </ul>
             <p className="text-sm text-blue-700 font-medium mt-2">💰 Referral Bonus: $100 when you open an account using our link and set up direct deposit!</p>
           </div>
           <div className="p-4 bg-blue-50 rounded-lg">
             <h4 className="font-medium mb-2">Bank of America</h4>
-            <p className="text-sm text-slate-700">Advantage SafeBalance account with no overdraft fees. Monthly maintenance fees waived for students under 25. Digital banking tools with budgeting features. Access to over 15,000 ATMs nationwide.</p>
+            <ul className="text-sm text-slate-700 list-disc pl-4 space-y-1">
+              <li>Advantage SafeBalance account with no overdraft fees</li>
+              <li>Monthly maintenance fees waived for students under 25</li>
+              <li>Digital banking tools with budgeting features</li>
+              <li>Access to over 15,000 ATMs nationwide</li>
+            </ul>
             <p className="text-sm text-blue-700 font-medium mt-2">💰 Referral Bonus: $100 when opening an account with our link and completing qualifying direct deposits.</p>
           </div>
           <div className="p-4 bg-blue-50 rounded-lg">
             <h4 className="font-medium mb-2">Wells Fargo</h4>
-            <p className="text-sm text-slate-700">Everyday Checking account with fees waived for students 17-24. Branches on many university campuses. No minimum opening deposit required. Free incoming wire transfers, ideal for receiving money from home.</p>
+            <ul className="text-sm text-slate-700 list-disc pl-4 space-y-1">
+              <li>Everyday Checking account with fees waived for students 17-24</li>
+              <li>Branches on many university campuses</li>
+              <li>No minimum opening deposit required</li>
+              <li>Free incoming wire transfers, ideal for receiving money from home</li>
+            </ul>
             <p className="text-sm text-blue-700 font-medium mt-2">💰 Referral Bonus: $50 when you open an account with our referral code and maintain a $500 minimum balance for 3 months.</p>
           </div>
           <div className="p-4 bg-blue-50 rounded-lg">
             <h4 className="font-medium mb-2">Capital One</h4>
-            <p className="text-sm text-slate-700">360 Checking with no fees or minimums for everyone. 0.10% APY interest on all balances. Fee-free access to 40,000+ ATMs. No foreign transaction fees on debit card purchases made outside the US.</p>
+            <ul className="text-sm text-slate-700 list-disc pl-4 space-y-1">
+              <li>360 Checking with no fees or minimums for everyone</li>
+              <li>0.10% APY interest on all balances</li> 
+              <li>Fee-free access to 40,000+ ATMs</li>
+              <li>No foreign transaction fees on debit card purchases made outside the US</li>
+            </ul>
             <p className="text-sm text-blue-700 font-medium mt-2">💰 Referral Bonus: $75 bonus when you open an account with our link and make 3 debit card purchases within 90 days.</p>
           </div>
         </div>
@@ -79,9 +99,11 @@ const topics: Topic[] = [
     content: (
       <div className="space-y-4">
         <h3 className="text-xl font-bold">What is an SSN?</h3>
-        <p className="text-slate-700">
-          A Social Security Number (SSN) is a nine-digit identification number issued to U.S. citizens, permanent residents, and temporary working residents. As an international student, you can get an SSN if you have a job offer from your university or an approved employer.
-        </p>
+        <ul className="text-slate-700 list-disc pl-4 space-y-1">
+          <li>A Social Security Number (SSN) is a nine-digit identification number issued to U.S. citizens, permanent residents, and temporary working residents</li>
+          <li>As an international student, you can get an SSN if you have a job offer from your university or an approved employer</li>
+          <li>Having an SSN simplifies many financial processes in the US</li>
+        </ul>
         
         <h3 className="text-xl font-bold mt-8">Financial Benefits of Having an SSN</h3>
         <ul className="list-disc list-inside space-y-2 text-slate-700">
@@ -121,22 +143,43 @@ const topics: Topic[] = [
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-4 bg-indigo-50 rounded-lg">
             <h4 className="font-medium mb-2">Deserve EDU Mastercard</h4>
-            <p className="text-sm text-slate-700">Specifically designed for international students. No SSN required, only passport and I-20. 1% cashback on all purchases. Amazon Prime Student membership for one year. No annual fee or foreign transaction fees.</p>
+            <ul className="text-sm text-slate-700 list-disc pl-4 space-y-1">
+              <li>Specifically designed for international students</li>
+              <li>No SSN required, only passport and I-20</li>
+              <li>1% cashback on all purchases</li>
+              <li>Amazon Prime Student membership for one year</li>
+              <li>No annual fee or foreign transaction fees</li>
+            </ul>
             <p className="text-sm text-indigo-700 font-medium mt-2">💰 Referral Bonus: $30 statement credit when approved through our link!</p>
           </div>
           <div className="p-4 bg-indigo-50 rounded-lg">
             <h4 className="font-medium mb-2">Discover it® Student Cash Back</h4>
-            <p className="text-sm text-slate-700">5% cashback in rotating categories (grocery stores, restaurants, gas stations). No SSN required for international students with passport and I-20. Free FICO® Score monitoring. No annual fee or foreign transaction fees.</p>
+            <ul className="text-sm text-slate-700 list-disc pl-4 space-y-1">
+              <li>5% cashback in rotating categories (grocery stores, restaurants, gas stations)</li>
+              <li>No SSN required for international students with passport and I-20</li>
+              <li>Free FICO® Score monitoring</li>
+              <li>No annual fee or foreign transaction fees</li>
+            </ul>
             <p className="text-sm text-indigo-700 font-medium mt-2">💰 Referral Bonus: $50 statement credit + cashback match for the entire first year (effectively doubling your rewards)!</p>
           </div>
           <div className="p-4 bg-indigo-50 rounded-lg">
             <h4 className="font-medium mb-2">Petal 2 Visa</h4>
-            <p className="text-sm text-slate-700">For students with no credit history. Uses banking history instead of credit score for approval. 1-1.5% cashback that increases with on-time payments. No annual fee, late fee, or foreign transaction fees.</p>
+            <ul className="text-sm text-slate-700 list-disc pl-4 space-y-1">
+              <li>For students with no credit history</li>
+              <li>Uses banking history instead of credit score for approval</li>
+              <li>1-1.5% cashback that increases with on-time payments</li>
+              <li>No annual fee, late fee, or foreign transaction fees</li>
+            </ul>
             <p className="text-sm text-indigo-700 font-medium mt-2">💰 Referral Bonus: $50 bonus after making $500 in purchases within 90 days of approval via our link.</p>
           </div>
           <div className="p-4 bg-indigo-50 rounded-lg">
             <h4 className="font-medium mb-2">Capital One Journey Student</h4>
-            <p className="text-sm text-slate-700">1% cashback on all purchases, boosted to 1.25% with on-time payments. No foreign transaction fees. Credit limit increases available after 5 months of on-time payments. Access to CreditWise monitoring tool.</p>
+            <ul className="text-sm text-slate-700 list-disc pl-4 space-y-1">
+              <li>1% cashback on all purchases, boosted to 1.25% with on-time payments</li>
+              <li>No foreign transaction fees</li>
+              <li>Credit limit increases available after 5 months of on-time payments</li>
+              <li>Access to CreditWise monitoring tool</li>
+            </ul>
             <p className="text-sm text-indigo-700 font-medium mt-2">💰 Referral Bonus: $100 bonus after spending $500 within the first 3 months when applying through our link.</p>
           </div>
         </div>
@@ -145,22 +188,40 @@ const topics: Topic[] = [
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-4 bg-indigo-50 rounded-lg">
             <h4 className="font-medium mb-2">Chase Freedom Student</h4>
-            <p className="text-sm text-slate-700">1% cashback on all purchases. $50 bonus after first purchase made within 3 months. Credit limit increases after 5 on-time payments. Free credit score access. No annual fee.</p>
+            <ul className="text-sm text-slate-700 list-disc pl-4 space-y-1">
+              <li>1% cashback on all purchases</li>
+              <li>$50 bonus after first purchase made within 3 months</li>
+              <li>Credit limit increases after 5 on-time payments</li>
+              <li>Free credit score access</li>
+              <li>No annual fee</li>
+            </ul>
             <p className="text-sm text-indigo-700 font-medium mt-2">💰 Referral Bonus: Additional $50 when applying with our referral link, plus $20 Good Standing Rewards annually for up to 5 years.</p>
           </div>
           <div className="p-4 bg-indigo-50 rounded-lg">
             <h4 className="font-medium mb-2">Bank of America Cash Rewards</h4>
-            <p className="text-sm text-slate-700">3% cashback in your choice category (gas, online shopping, dining, travel, drug stores). 2% at grocery stores and wholesale clubs. $200 online cash rewards bonus after spending $1,000 in first 90 days.</p>
+            <ul className="text-sm text-slate-700 list-disc pl-4 space-y-1">
+              <li>3% cashback in your choice category (gas, online shopping, dining, travel, drug stores)</li>
+              <li>2% at grocery stores and wholesale clubs</li>
+              <li>$200 online cash rewards bonus after spending $1,000 in first 90 days</li>
+            </ul>
             <p className="text-sm text-indigo-700 font-medium mt-2">💰 Referral Bonus: Additional $25 statement credit when approved through our referral link.</p>
           </div>
           <div className="p-4 bg-indigo-50 rounded-lg">
             <h4 className="font-medium mb-2">Citi Rewards+ Student</h4>
-            <p className="text-sm text-slate-700">2X ThankYou® Points at supermarkets and gas stations (on first $6,000 per year). Rounds up to nearest 10 points on every purchase. 10% points back on first 100,000 points redeemed per year.</p>
+            <ul className="text-sm text-slate-700 list-disc pl-4 space-y-1">
+              <li>2X ThankYou® Points at supermarkets and gas stations (on first $6,000 per year)</li>
+              <li>Rounds up to nearest 10 points on every purchase</li>
+              <li>10% points back on first 100,000 points redeemed per year</li>
+            </ul>
             <p className="text-sm text-indigo-700 font-medium mt-2">💰 Referral Bonus: 15,000 bonus points (worth $150) after spending $750 in first 3 months through our link.</p>
           </div>
           <div className="p-4 bg-indigo-50 rounded-lg">
             <h4 className="font-medium mb-2">Wells Fargo Cash Back College</h4>
-            <p className="text-sm text-slate-700">3% cashback on gas, groceries, and drugstores for first 6 months, then 1% on everything. Cell phone protection up to $600 when paying your bill with the card. No annual fee.</p>
+            <ul className="text-sm text-slate-700 list-disc pl-4 space-y-1">
+              <li>3% cashback on gas, groceries, and drugstores for first 6 months, then 1% on everything</li>
+              <li>Cell phone protection up to $600 when paying your bill with the card</li>
+              <li>No annual fee</li>
+            </ul>
             <p className="text-sm text-indigo-700 font-medium mt-2">💰 Referral Bonus: $50 cash rewards bonus when opening through our link and spending $500 in first 3 months.</p>
           </div>
         </div>
@@ -233,22 +294,41 @@ const topics: Topic[] = [
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-4 bg-yellow-50 rounded-lg">
             <h4 className="font-medium mb-2">Chase College Checking℠</h4>
-            <p className="text-sm text-slate-700">$100 bonus when you open an account and complete 10 qualifying transactions within 60 days. No monthly service fee for up to 5 years while in college. Access to 16,000+ ATMs and 4,700+ branches nationwide.</p>
+            <ul className="text-sm text-slate-700 list-disc pl-4 space-y-1">
+              <li>$100 bonus when you open an account and complete 10 qualifying transactions within 60 days</li>
+              <li>No monthly service fee for up to 5 years while in college</li>
+              <li>Access to 16,000+ ATMs and 4,700+ branches nationwide</li>
+            </ul>
             <p className="text-sm text-yellow-700 font-medium mt-2">💰 Exclusive Offer: $100 bonus + extra $25 Amazon gift card when using our referral link!</p>
           </div>
           <div className="p-4 bg-yellow-50 rounded-lg">
             <h4 className="font-medium mb-2">Bank of America Advantage Banking</h4>
-            <p className="text-sm text-slate-700">$100 bonus for new student checking accounts with qualifying direct deposits. Monthly maintenance fee waived for students under 25. Mobile check deposits and Zelle transfers. Access to financial education resources.</p>
+            <ul className="text-sm text-slate-700 list-disc pl-4 space-y-1">
+              <li>$100 bonus for new student checking accounts with qualifying direct deposits</li>
+              <li>Monthly maintenance fee waived for students under 25</li>
+              <li>Mobile check deposits and Zelle transfers</li>
+              <li>Access to financial education resources</li>
+            </ul>
             <p className="text-sm text-yellow-700 font-medium mt-2">💰 Exclusive Offer: $100 bonus + additional $50 when setting up direct deposit via our link!</p>
           </div>
           <div className="p-4 bg-yellow-50 rounded-lg">
             <h4 className="font-medium mb-2">TD Bank Student Checking</h4>
-            <p className="text-sm text-slate-700">$150 bonus when opening a new account and receiving direct deposits of $500+ within 60 days. No monthly maintenance fee for students 17-23. Free incoming wire transfers. Extended hours and Sunday banking at many locations.</p>
+            <ul className="text-sm text-slate-700 list-disc pl-4 space-y-1">
+              <li>$150 bonus when opening a new account and receiving direct deposits of $500+ within 60 days</li>
+              <li>No monthly maintenance fee for students 17-23</li>
+              <li>Free incoming wire transfers</li>
+              <li>Extended hours and Sunday banking at many locations</li>
+            </ul>
             <p className="text-sm text-yellow-700 font-medium mt-2">💰 Exclusive Offer: $150 bonus + $25 bonus when opening a linked savings account through our referral code!</p>
           </div>
           <div className="p-4 bg-yellow-50 rounded-lg">
             <h4 className="font-medium mb-2">Discover Cashback Debit</h4>
-            <p className="text-sm text-slate-700">No bonus, but offers 1% cashback on up to $3,000 in debit card purchases each month. No monthly fees, minimum balances, or overdraft fees. Access to 60,000+ fee-free ATMs. 24/7 U.S.-based customer service.</p>
+            <ul className="text-sm text-slate-700 list-disc pl-4 space-y-1">
+              <li>No bonus, but offers 1% cashback on up to $3,000 in debit card purchases each month</li>
+              <li>No monthly fees, minimum balances, or overdraft fees</li>
+              <li>Access to 60,000+ fee-free ATMs</li>
+              <li>24/7 U.S.-based customer service</li>
+            </ul>
             <p className="text-sm text-yellow-700 font-medium mt-2">💰 Exclusive Offer: $75 bonus when opening through our referral and making $500 in purchases within 30 days!</p>
           </div>
         </div>
@@ -257,17 +337,29 @@ const topics: Topic[] = [
         <div className="space-y-4">
           <div className="p-4 bg-yellow-50 rounded-lg">
             <h4 className="font-medium mb-2">Chase Refer-a-Friend</h4>
-            <p className="text-sm text-slate-700">Both referrer and new customer can receive $50 when opening a checking account through referral. Additional $50 bonus when setting up direct deposit within 60 days. Promotion changes quarterly - check our updated link for current offers.</p>
+            <ul className="text-sm text-slate-700 list-disc pl-4 space-y-1">
+              <li>Both referrer and new customer can receive $50 when opening a checking account through referral</li>
+              <li>Additional $50 bonus when setting up direct deposit within 60 days</li>
+              <li>Promotion changes quarterly - check our updated link for current offers</li>
+            </ul>
             <p className="text-sm text-yellow-700 font-medium mt-2">💰 Our Referral Link: Get up to $100 total bonus ($50 base + $50 for direct deposit)</p>
           </div>
           <div className="p-4 bg-yellow-50 rounded-lg">
             <h4 className="font-medium mb-2">Discover Refer-a-Friend</h4>
-            <p className="text-sm text-slate-700">Both parties get $50 or more when a friend opens their first Discover account. Referrals available for checking, savings, and credit card products. Bonus paid after account is opened and qualifying activities completed.</p>
+            <ul className="text-sm text-slate-700 list-disc pl-4 space-y-1">
+              <li>Both parties get $50 or more when a friend opens their first Discover account</li>
+              <li>Referrals available for checking, savings, and credit card products</li>
+              <li>Bonus paid after account is opened and qualifying activities completed</li>
+            </ul>
             <p className="text-sm text-yellow-700 font-medium mt-2">💰 Our Referral Link: Get $100 ($50 for you + $50 for us) when opening your first account!</p>
           </div>
           <div className="p-4 bg-yellow-50 rounded-lg">
             <h4 className="font-medium mb-2">Capital One Refer-a-Friend</h4>
-            <p className="text-sm text-slate-700">Earn $50 for each friend who opens a checking account with qualifying activities. No limit to how many friends you can refer. New customers receive $25-$100 bonus depending on the promotion and qualifying activities.</p>
+            <ul className="text-sm text-slate-700 list-disc pl-4 space-y-1">
+              <li>Earn $50 for each friend who opens a checking account with qualifying activities</li>
+              <li>No limit to how many friends you can refer</li>
+              <li>New customers receive $25-$100 bonus depending on the promotion and qualifying activities</li>
+            </ul>
             <p className="text-sm text-yellow-700 font-medium mt-2">💰 Our Referral Link: Get $75 bonus with $250 in direct deposits within 90 days!</p>
           </div>
         </div>
@@ -420,4 +512,3 @@ const Index = () => {
 };
 
 export default Index;
-
