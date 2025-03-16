@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Hero from '@/components/Hero';
@@ -386,7 +385,6 @@ const Index = () => {
     setActiveTopicId(topicId);
     setExpandedSectionId(topicId);
     
-    // Close sidebar on mobile when topic is selected
     if (window.innerWidth < 768) {
       setIsSidebarOpen(false);
     }
@@ -411,7 +409,6 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white overflow-x-hidden">
       <Hero />
       
-      {/* Mobile Sidebar Toggle */}
       <div className="md:hidden fixed top-4 left-4 z-50">
         <button
           onClick={toggleSidebar}
@@ -437,13 +434,11 @@ const Index = () => {
             </p>
           </motion.div>
           
-          {/* Google Ad Banner - Top of Page */}
           <div className="mb-10">
             <GoogleAd type="banner" className="mx-auto" />
           </div>
           
           <div className="flex flex-col md:flex-row gap-6">
-            {/* Sidebar - fixed position on mobile */}
             <div className={`
               fixed md:static top-0 left-0 h-screen md:h-auto w-3/4 md:w-64 
               transform ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0
@@ -459,7 +454,6 @@ const Index = () => {
               />
             </div>
             
-            {/* Overlay for mobile */}
             {isSidebarOpen && (
               <div 
                 className="fixed inset-0 bg-black/30 z-30 md:hidden"
@@ -468,7 +462,6 @@ const Index = () => {
             )}
             
             <div className="md:flex-1">
-              {/* Mobile card view - show only on mobile if no topic is selected */}
               <div className="grid grid-cols-2 md:hidden gap-4 mb-8">
                 {activeTopicId === null && topics.map((topic) => (
                   <TopicCard
@@ -481,7 +474,6 @@ const Index = () => {
                 ))}
               </div>
               
-              {/* Topic sections */}
               <section id="topic-sections" className="space-y-6">
                 {topics.map((topic) => (
                   <ExpandableSection
@@ -496,11 +488,6 @@ const Index = () => {
                 ))}
               </section>
             </div>
-          </div>
-          
-          {/* Google Ad Banner - Middle of Page */}
-          <div className="my-12">
-            <GoogleAd type="banner" className="mx-auto" />
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { motion } from 'framer-motion';
+import GoogleAd from './GoogleAd';
 
 interface FaqItem {
   question: string;
@@ -105,6 +106,17 @@ const FaqSection = () => {
               </AccordionItem>
             ))}
           </Accordion>
+        </motion.div>
+        
+        {/* Google Ad Banner - Below FAQ */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-12"
+        >
+          <GoogleAd type="banner" className="mx-auto" />
         </motion.div>
       </div>
     </section>
