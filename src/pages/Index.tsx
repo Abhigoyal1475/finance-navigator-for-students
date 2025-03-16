@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Hero from '@/components/Hero';
 import TopicCard from '@/components/TopicCard';
@@ -7,7 +7,6 @@ import FaqSection from '@/components/FaqSection';
 import CtaSection from '@/components/CtaSection';
 import Footer from '@/components/Footer';
 import SidebarOverview from '@/components/SidebarOverview';
-import { toast } from 'sonner';
 import { Menu, X } from 'lucide-react';
 
 // Types for our topics
@@ -380,16 +379,6 @@ const Index = () => {
   const [activeTopicId, setActiveTopicId] = useState<string | null>(null);
   const [expandedSectionId, setExpandedSectionId] = useState<string | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
-  
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      toast("Welcome to the Finance Guide", {
-        description: "Navigate through different topics to learn about banking and finance in the US",
-      });
-    }, 2000);
-    
-    return () => clearTimeout(timer);
-  }, []);
   
   const handleTopicClick = (topicId: string) => {
     setActiveTopicId(topicId);
