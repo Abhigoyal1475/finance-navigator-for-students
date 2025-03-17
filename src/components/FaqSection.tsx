@@ -1,123 +1,69 @@
 
-import React, { useState } from 'react';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import React from 'react';
 import { motion } from 'framer-motion';
-import GoogleAd from './GoogleAd';
-
-interface FaqItem {
-  question: string;
-  answer: React.ReactNode;
-}
-
-const faqs: FaqItem[] = [
-  {
-    question: "Can I get a credit card without an SSN?",
-    answer: (
-      <ul className="list-disc pl-4 space-y-1">
-        <li className="text-left">Yes, several banks offer credit cards to international students without an SSN</li>
-        <li className="text-left">Popular options include the Deserve EDU Mastercard, Nova Credit, and the Discover it Student Card</li>
-        <li className="text-left">These cards typically require proof of enrollment and a U.S. bank account</li>
-      </ul>
-    )
-  },
-  {
-    question: "How long does it take to build credit score in the US?",
-    answer: (
-      <ul className="list-disc pl-4 space-y-1">
-        <li className="text-left">Building a good credit score typically takes 6-12 months of credit history</li>
-        <li className="text-left">Using a credit card responsibly is the fastest way to build credit</li>
-        <li className="text-left">Making on-time payments and keeping credit utilization low are key factors</li>
-      </ul>
-    )
-  },
-  {
-    question: "What documents do I need to open a bank account?",
-    answer: (
-      <ul className="list-disc pl-4 space-y-1">
-        <li className="text-left">Passport</li>
-        <li className="text-left">Student visa (F-1 or J-1)</li>
-        <li className="text-left">I-20 or DS-2019 form</li>
-        <li className="text-left">Proof of U.S. address</li>
-        <li className="text-left">University student ID</li>
-        <li className="text-left">Some banks may ask for an SSN, but many have special programs for international students</li>
-      </ul>
-    )
-  },
-  {
-    question: "Are there banks that don't charge international transaction fees?",
-    answer: (
-      <ul className="list-disc pl-4 space-y-1">
-        <li className="text-left">Yes, several banks offer accounts with no international transaction fees</li>
-        <li className="text-left">Charles Schwab, Capital One 360, and HSBC Premier are good options</li>
-        <li className="text-left">Online banks like Wise and Revolut also offer competitive exchange rates for international transfers</li>
-      </ul>
-    )
-  },
-  {
-    question: "What's the difference between a checking and savings account?",
-    answer: (
-      <ul className="list-disc pl-4 space-y-1">
-        <li className="text-left">A checking account is designed for everyday transactions with unlimited withdrawals and often comes with a debit card</li>
-        <li className="text-left">A savings account is meant for setting money aside, typically offers interest on your balance, but may limit monthly withdrawals</li>
-        <li className="text-left">Most students should have both types of accounts</li>
-      </ul>
-    )
-  }
-];
+import GoogleAd from '@/components/GoogleAd';
 
 const FaqSection = () => {
-  const [openItem, setOpenItem] = useState<string | null>(null);
-  
+  const faqs = [
+    {
+      question: "Do I need an SSN to open a bank account in the US?",
+      answer: "No, most banks don't require an SSN to open a basic checking account. You'll typically need your passport, visa, I-20, and proof of address. However, having an SSN can simplify the process and give you access to more banking features."
+    },
+    {
+      question: "Can international students build credit in the US?",
+      answer: "Yes, international students can build credit history in the US. The best ways to start are with secured credit cards, student credit cards like Discover It Student or the Deserve EDU Mastercard, or by becoming an authorized user on someone else's credit card."
+    },
+    {
+      question: "How do I send money back home as an international student?",
+      answer: "There are several options for international money transfers, including bank wire transfers, services like Wise (formerly TransferWise), Remitly, or Xoom, and some credit unions that offer low-fee international transfers. Compare exchange rates and fees before choosing a service."
+    },
+    {
+      question: "Are there any special tax considerations for international students?",
+      answer: "Yes, international students typically need to file Form 8843, and if you worked, you'll likely need to file a tax return. Most international students are considered non-resident aliens for tax purposes, which affects how you're taxed. Check with your university's international student office for tax resources."
+    },
+    {
+      question: "Can I use my international credit history in the US?",
+      answer: "Unfortunately, credit history doesn't transfer between countries. You'll need to build your US credit history from scratch. Some services like Nova Credit are starting to help bring international credit history to the US, but their availability varies by country."
+    }
+  ];
+
   return (
-    <section id="faqs" className="py-20 px-4">
+    <section className="py-16 px-4 bg-blue-50" id="faq">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
+          className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-center mb-2">Frequently Asked Questions</h2>
-          <p className="text-slate-600 text-center mb-10">Common questions about banking and finance for international students</p>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+          <p className="text-slate-600">
+            Find answers to common questions about banking and finances for international students in the US.
+          </p>
         </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="glass-card rounded-xl overflow-hidden"
-        >
-          <Accordion 
-            type="single" 
-            collapsible 
-            value={openItem || undefined}
-            onValueChange={(value) => setOpenItem(value)}
-            className="divide-y divide-slate-200"
-          >
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-none">
-                <AccordionTrigger className="py-4 px-6 hover:no-underline hover:bg-blue-50/50">
-                  <span className="text-left font-medium">{faq.question}</span>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pt-2 pb-4 text-slate-700">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </motion.div>
-        
-        {/* Google Ad Banner - Below FAQ */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="mt-12"
-        >
-          <GoogleAd type="banner" className="mx-auto" />
-        </motion.div>
+
+        <div className="space-y-6">
+          {faqs.map((faq, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl p-6 shadow-sm"
+              whileHover={{ y: -2, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)" }}
+            >
+              <h3 className="text-lg font-semibold mb-2">{faq.question}</h3>
+              <p className="text-slate-600">{faq.answer}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+      
+      {/* Add Google Ad Banner below FAQ section */}
+      <div className="mt-16 max-w-4xl mx-auto">
+        <GoogleAd type="banner" className="mx-auto" />
       </div>
     </section>
   );

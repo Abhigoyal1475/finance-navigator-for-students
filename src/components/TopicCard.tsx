@@ -40,6 +40,11 @@ const TopicCard = ({ icon, title, onClick, isActive, variant = 'card' }: TopicCa
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
       viewport={{ once: true }}
+      whileHover={{ 
+        y: -5,
+        boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
+        transition: { duration: 0.2 }
+      }}
       onClick={onClick}
       className={cn(
         "glass-card p-6 rounded-xl cursor-pointer",
@@ -48,7 +53,13 @@ const TopicCard = ({ icon, title, onClick, isActive, variant = 'card' }: TopicCa
         isActive ? "ring-2 ring-primary/60 shadow-md" : ""
       )}
     >
-      <div className="text-4xl">{icon}</div>
+      <motion.div 
+        className="text-5xl"
+        whileHover={{ scale: 1.2 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      >
+        {icon}
+      </motion.div>
       <h3 className="font-medium text-center">{title}</h3>
     </motion.div>
   );

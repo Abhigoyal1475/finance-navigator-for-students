@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import TopicIllustration from './TopicIllustration';
 
-interface ExpandableSectionProps {
+interface EnhancedExpandableSectionProps {
   icon: string;
   title: string;
   children: React.ReactNode;
@@ -12,13 +12,13 @@ interface ExpandableSectionProps {
   onClick: () => void;
 }
 
-const ExpandableSection = ({ 
+const EnhancedExpandableSection = ({ 
   icon, 
   title, 
   children, 
   isExpanded, 
   onClick 
-}: ExpandableSectionProps) => {
+}: EnhancedExpandableSectionProps) => {
   
   // Map icon to illustration type
   const getIllustrationType = () => {
@@ -37,7 +37,7 @@ const ExpandableSection = ({
   };
 
   return (
-    <div className="glass-card rounded-xl overflow-hidden">
+    <div className="glass-card rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       <motion.div
         initial={false}
         onClick={onClick}
@@ -45,7 +45,13 @@ const ExpandableSection = ({
         whileHover={{ backgroundColor: "rgba(245, 247, 252, 0.9)" }}
       >
         <div className="flex items-center gap-3">
-          <div className="text-2xl md:text-3xl">{icon}</div>
+          <motion.div 
+            className="text-2xl md:text-3xl"
+            whileHover={{ scale: 1.2 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
+            {icon}
+          </motion.div>
           <h3 className="text-lg md:text-xl font-medium">{title}</h3>
         </div>
         <motion.div
@@ -85,4 +91,4 @@ const ExpandableSection = ({
   );
 };
 
-export default ExpandableSection;
+export default EnhancedExpandableSection;
