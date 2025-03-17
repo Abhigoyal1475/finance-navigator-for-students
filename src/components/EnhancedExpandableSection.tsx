@@ -2,7 +2,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import TopicIllustration from './TopicIllustration';
 
 interface EnhancedExpandableSectionProps {
   icon: string;
@@ -20,22 +19,6 @@ const EnhancedExpandableSection = ({
   onClick 
 }: EnhancedExpandableSectionProps) => {
   
-  // Map icon to illustration type
-  const getIllustrationType = () => {
-    switch (icon) {
-      case '🏦': 
-        return title.includes('Offers') ? 'offers' : 'bank';
-      case '💳': 
-        return 'credit-card';
-      case '🆔': 
-        return 'ssn';
-      case '💰': 
-        return 'credit-score';
-      default: 
-        return 'bank';
-    }
-  };
-
   return (
     <div className="glass-card rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
       <motion.div
@@ -72,16 +55,8 @@ const EnhancedExpandableSection = ({
             className="overflow-hidden"
           >
             <div className="p-4 md:p-6 pt-0 md:pt-0 border-t border-slate-100">
-              <div className="md:grid md:grid-cols-4 gap-6">
-                <div className="hidden md:block">
-                  <TopicIllustration 
-                    type={getIllustrationType()} 
-                    className="sticky top-6"
-                  />
-                </div>
-                <div className="md:col-span-3">
-                  {children}
-                </div>
+              <div className="w-full">
+                {children}
               </div>
             </div>
           </motion.div>
