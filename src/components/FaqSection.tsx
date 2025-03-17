@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import GoogleAd from './GoogleAd';
 
 const FaqSection = () => {
   const faqs = [
