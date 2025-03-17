@@ -5,6 +5,7 @@ import TopicCard from '@/components/TopicCard';
 import ExpandableSection from '@/components/ExpandableSection';
 import GoogleAd from '@/components/GoogleAd';
 import { BookOpen } from 'lucide-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 // Types for our topics
 export interface Topic {
@@ -33,6 +34,8 @@ const TopicsSection = ({
   isSidebarOpen,
   setIsSidebarOpen
 }: TopicsSectionProps) => {
+  const isMobile = useIsMobile();
+  
   return (
     <div className="relative pt-16 pb-20 px-4">
       <div className="max-w-7xl mx-auto">
@@ -65,6 +68,28 @@ const TopicsSection = ({
               onClick={() => setIsSidebarOpen(false)}
             />
           )}
+          
+          <div className="md:w-64 flex-shrink-0">
+            <div className="bg-white/80 backdrop-blur-sm p-4 rounded-lg border border-slate-100 shadow-sm md:sticky md:top-4">
+              <div className="mb-4">
+                <h2 className="font-bold text-lg text-slate-800">Topics</h2>
+                <p className="text-xs text-slate-500">Select a topic to learn more</p>
+              </div>
+              
+              <div className="space-y-2">
+                {topics.map((topic) => (
+                  <TopicCard
+                    key={topic.id}
+                    icon={topic.icon}
+                    title={topic.title}
+                    onClick={() => onTopicClick(topic.id)}
+                    isActive={activeTopicId === topic.id}
+                    variant="sidebar"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
           
           <div className="md:flex-1">
             <div className="grid grid-cols-2 md:hidden gap-4 mb-8">

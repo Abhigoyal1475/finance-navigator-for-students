@@ -5,7 +5,6 @@ import FaqSection from '@/components/FaqSection';
 import CtaSection from '@/components/CtaSection';
 import Footer from '@/components/Footer';
 import MobileSidebarToggle from '@/components/MobileSidebarToggle';
-import ResponsiveSidebar from '@/components/ResponsiveSidebar';
 import TopicsSection from '@/components/TopicsSection';
 import topics from '@/data/topicsData';
 import { motion } from 'framer-motion';
@@ -53,26 +52,15 @@ const Index = () => {
         toggleSidebar={toggleSidebar} 
       />
       
-      <div className="flex flex-col md:flex-row">
-        <ResponsiveSidebar
-          topics={topics}
-          activeTopicId={activeTopicId}
-          setActiveTopic={handleTopicClick}
-          isSidebarOpen={isSidebarOpen}
-        />
-        
-        <div className="flex-1">
-          <TopicsSection
-            topics={topics}
-            activeTopicId={activeTopicId}
-            expandedSectionId={expandedSectionId}
-            onTopicClick={handleTopicClick}
-            onSectionClick={handleSectionClick}
-            isSidebarOpen={isSidebarOpen}
-            setIsSidebarOpen={setIsSidebarOpen}
-          />
-        </div>
-      </div>
+      <TopicsSection
+        topics={topics}
+        activeTopicId={activeTopicId}
+        expandedSectionId={expandedSectionId}
+        onTopicClick={handleTopicClick}
+        onSectionClick={handleSectionClick}
+        isSidebarOpen={isSidebarOpen}
+        setIsSidebarOpen={setIsSidebarOpen}
+      />
       
       <FaqSection />
       <CtaSection />
