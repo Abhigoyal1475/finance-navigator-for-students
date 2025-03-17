@@ -11,40 +11,15 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-[85vh] flex flex-col items-center justify-center px-4 py-20 overflow-hidden">
-      {/* Background image - updated to be more student-finance specific */}
+      {/* Background image */}
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80" 
-          alt="International student using laptop for finances" 
+          alt="International student using laptop" 
           className="w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-blue-50/80 to-white/90"></div>
       </div>
-      
-      {/* Floating finance icons for visual interest */}
-      <motion.div 
-        className="absolute top-1/4 right-[15%] glass h-16 w-16 flex items-center justify-center"
-        animate={{ y: ["0%", "-10%", "0%"] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <span className="text-3xl">💳</span>
-      </motion.div>
-      
-      <motion.div 
-        className="absolute bottom-1/4 left-[20%] glass h-12 w-12 flex items-center justify-center"
-        animate={{ y: ["0%", "-15%", "0%"] }}
-        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-      >
-        <span className="text-2xl">🏦</span>
-      </motion.div>
-      
-      <motion.div 
-        className="absolute top-1/3 left-[15%] glass h-14 w-14 flex items-center justify-center"
-        animate={{ y: ["0%", "-12%", "0%"] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-      >
-        <span className="text-2xl">💰</span>
-      </motion.div>
       
       {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto text-center px-4">

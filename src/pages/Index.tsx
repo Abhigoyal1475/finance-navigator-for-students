@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Hero from '@/components/Hero';
 import FaqSection from '@/components/FaqSection';
 import CtaSection from '@/components/CtaSection';
@@ -9,22 +9,11 @@ import ResponsiveSidebar from '@/components/ResponsiveSidebar';
 import TopicsSection from '@/components/TopicsSection';
 import topics from '@/data/topicsData';
 import { motion } from 'framer-motion';
-import { toast } from 'sonner';
 
 const Index = () => {
   const [activeTopicId, setActiveTopicId] = useState<string | null>(null);
   const [expandedSectionId, setExpandedSectionId] = useState<string | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
-  
-  // Show welcome toast when component mounts
-  useEffect(() => {
-    setTimeout(() => {
-      toast.success('Welcome to the International Student Finance Guide!', {
-        description: 'Click on any topic to learn more about managing your finances in the US.',
-        duration: 5000,
-      });
-    }, 2000);
-  }, []);
   
   const handleTopicClick = (topicId: string) => {
     setActiveTopicId(topicId);

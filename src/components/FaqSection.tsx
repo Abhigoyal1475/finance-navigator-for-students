@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import GoogleAd from '@/components/GoogleAd';
 
 const FaqSection = () => {
   const faqs = [
@@ -52,7 +51,6 @@ const FaqSection = () => {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               viewport={{ once: true }}
               className="bg-white rounded-xl p-6 shadow-sm"
-              whileHover={{ y: -2, boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)" }}
             >
               <h3 className="text-lg font-semibold mb-2">{faq.question}</h3>
               <p className="text-slate-600">{faq.answer}</p>

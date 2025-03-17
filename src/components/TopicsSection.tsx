@@ -2,9 +2,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import TopicCard from '@/components/TopicCard';
-import EnhancedExpandableSection from '@/components/EnhancedExpandableSection';
+import ExpandableSection from '@/components/ExpandableSection';
 import GoogleAd from '@/components/GoogleAd';
-import { BookOpen, ArrowDown } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 
 // Types for our topics
 export interface Topic {
@@ -52,15 +52,6 @@ const TopicsSection = ({
           <p className="text-slate-600 max-w-2xl mx-auto">
             Click on a topic to learn everything you need to know about managing your finances as an international student in the US.
           </p>
-          
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-            className="mt-6 flex justify-center"
-          >
-            <ArrowDown className="h-6 w-6 text-blue-500 animate-bounce" />
-          </motion.div>
         </motion.div>
         
         <div className="mb-10">
@@ -90,7 +81,7 @@ const TopicsSection = ({
             
             <section id="topic-sections" className="space-y-6">
               {topics.map((topic) => (
-                <EnhancedExpandableSection
+                <ExpandableSection
                   key={topic.id}
                   icon={topic.icon}
                   title={topic.title}
@@ -98,7 +89,7 @@ const TopicsSection = ({
                   onClick={() => onSectionClick(topic.id)}
                 >
                   {topic.content}
-                </EnhancedExpandableSection>
+                </ExpandableSection>
               ))}
             </section>
           </div>
