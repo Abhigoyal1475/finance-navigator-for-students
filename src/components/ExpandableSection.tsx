@@ -49,7 +49,7 @@ const ExpandableSection = ({
             className="overflow-hidden"
           >
             <div className="p-4 md:p-6 pt-0 md:pt-0 border-t border-slate-100">
-              <div className="w-full">
+              <div className="w-full text-sm text-slate-700">
                 {children}
               </div>
             </div>

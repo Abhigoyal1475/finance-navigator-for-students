@@ -1,7 +1,9 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import GoogleAd from './GoogleAd';
+import { ChevronDown } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 const FaqSection = () => {
   const faqs = [
@@ -43,20 +45,19 @@ const FaqSection = () => {
           </p>
         </motion.div>
 
-        <div className="space-y-6">
-          {faqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-xl p-6 shadow-sm"
-            >
-              <h3 className="text-lg font-semibold mb-2">{faq.question}</h3>
-              <p className="text-slate-600">{faq.answer}</p>
-            </motion.div>
-          ))}
+        <div className="space-y-4">
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-xl shadow-sm overflow-hidden border-none mb-4">
+                <AccordionTrigger className="px-6 py-4 hover:no-underline text-left">
+                  <h3 className="text-base font-semibold text-left">{faq.question}</h3>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4 text-slate-600 text-sm">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
       

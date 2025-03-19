@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Hero from '@/components/Hero';
 import FaqSection from '@/components/FaqSection';
 import CtaSection from '@/components/CtaSection';
@@ -8,17 +8,26 @@ import MobileSidebarToggle from '@/components/MobileSidebarToggle';
 import TopicsSection from '@/components/TopicsSection';
 import topics from '@/data/topicsData';
 import { motion } from 'framer-motion';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Index = () => {
   const [activeTopicId, setActiveTopicId] = useState<string | null>(null);
   const [expandedSectionId, setExpandedSectionId] = useState<string | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
+  const isMobile = useIsMobile();
+  
+  useEffect(() => {
+    // Close sidebar when switching to desktop
+    if (!isMobile && isSidebarOpen) {
+      setIsSidebarOpen(false);
+    }
+  }, [isMobile, isSidebarOpen]);
   
   const handleTopicClick = (topicId: string) => {
     setActiveTopicId(topicId);
     setExpandedSectionId(topicId);
     
-    if (window.innerWidth < 768) {
+    if (isMobile) {
       setIsSidebarOpen(false);
     }
     

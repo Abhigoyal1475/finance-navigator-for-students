@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowDown } from 'lucide-react';
+import { ArrowDown, Gift, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
@@ -44,13 +44,29 @@ const Hero = () => {
         </motion.h1>
         
         <motion.p 
-          className="text-base md:text-lg text-slate-700 mb-10 max-w-2xl mx-auto"
+          className="text-base md:text-lg text-slate-700 mb-6 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           Set up your bank account, understand SSN benefits, and find the best credit cards—all in one place.
         </motion.p>
+        
+        <motion.div 
+          className="bg-blue-50/80 backdrop-blur-2xs p-4 rounded-lg mb-8 border border-blue-100 shadow-sm"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+        >
+          <div className="flex items-center justify-center gap-2 mb-2 text-indigo-600">
+            <Gift size={18} className="text-blue-600" />
+            <span className="font-medium">Exclusive Benefits</span>
+          </div>
+          <p className="text-sm text-slate-700">
+            Access our <span className="font-semibold">exclusive bank offers and referrals</span> that you won't find elsewhere. 
+            Using our special links gives you better bonuses and benefits than standard applications!
+          </p>
+        </motion.div>
         
         <motion.div
           initial={{ opacity: 0, y: 20 }}
