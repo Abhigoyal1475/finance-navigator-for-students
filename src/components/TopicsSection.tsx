@@ -6,6 +6,7 @@ import ExpandableSection from '@/components/ExpandableSection';
 import GoogleAd from '@/components/GoogleAd';
 import { BookOpen, Award, Check } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import TopicIllustration from '@/components/TopicIllustration';
 
 // Types for our topics
 export interface Topic {
@@ -35,6 +36,18 @@ const TopicsSection = ({
   setIsSidebarOpen
 }: TopicsSectionProps) => {
   const isMobile = useIsMobile();
+  
+  // Helper function to map topic ID to illustration type
+  const getIllustrationType = (topicId: string) => {
+    switch (topicId) {
+      case 'bank-account': return 'bank';
+      case 'credit-cards': return 'credit-card';
+      case 'ssn-benefits': return 'ssn';
+      case 'credit-score': return 'credit-score';
+      case 'bank-offers': return 'offers';
+      default: return 'bank';
+    }
+  };
   
   return (
     <div className="relative pt-16 pb-20 px-4">
@@ -133,7 +146,7 @@ const TopicsSection = ({
           )}
           
           <div className="md:w-64 flex-shrink-0">
-            <div className="bg-white/80 backdrop-blur-sm p-4 rounded-lg border border-slate-100 shadow-sm md:sticky md:top-4">
+            <div className="bg-white/80 backdrop-blur-sm p-4 rounded-lg border border-slate-100 shadow-sm md:sticky md:top-4 focus-within:ring-2 focus-within:ring-blue-400 focus-within:ring-opacity-50">
               <div className="mb-4">
                 <h2 className="font-bold text-lg text-slate-800">Topics</h2>
                 <p className="text-xs text-slate-500">Select a topic to learn more</p>
@@ -155,19 +168,34 @@ const TopicsSection = ({
           </div>
           
           <div className="md:flex-1">
-            <div className="grid grid-cols-2 md:hidden gap-4 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:hidden gap-4 mb-8">
               {activeTopicId === null && topics.map((topic) => (
-                <TopicCard
+                <motion.div
                   key={topic.id}
-                  icon={topic.icon}
-                  title={topic.title}
-                  onClick={() => onTopicClick(topic.id)}
-                  isActive={activeTopicId === topic.id}
-                />
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <TopicCard
+                    icon={topic.icon}
+                    title={topic.title}
+                    onClick={() => onTopicClick(topic.id)}
+                    isActive={activeTopicId === topic.id}
+                  />
+                </motion.div>
               ))}
             </div>
             
-            <section id="topic-sections" className="space-y-6">
+            {activeTopicId && (
+              <div className="hidden md:block mb-8">
+                <TopicIllustration 
+                  type={getIllustrationType(activeTopicId)} 
+                  className="max-w-xs mx-auto"
+                />
+              </div>
+            )}
+            
+            <section id="topic-sections" className="space-y-6" tabIndex={0}>
               {topics.map((topic) => (
                 <ExpandableSection
                   key={topic.id}
@@ -176,6 +204,14 @@ const TopicsSection = ({
                   isExpanded={expandedSectionId === topic.id}
                   onClick={() => onSectionClick(topic.id)}
                 >
+                  {expandedSectionId === topic.id && !isMobile && (
+                    <div className="mb-6 mt-2">
+                      <TopicIllustration 
+                        type={getIllustrationType(topic.id)} 
+                        className="max-w-[120px] mx-auto"
+                      />
+                    </div>
+                  )}
                   {topic.content}
                 </ExpandableSection>
               ))}
