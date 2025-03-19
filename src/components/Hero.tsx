@@ -63,25 +63,20 @@ const Hero = () => {
             <span className="font-medium">Exclusive Benefits</span>
           </div>
           <p className="text-sm text-slate-700">
-            Access our <span className="font-semibold">exclusive bank offers and referrals</span> that you won't find elsewhere. 
-            We've spent months researching and negotiating special deals so you get better bonuses and benefits than standard applications!
+            Access our <span className="font-semibold">exclusive bank offers and referrals</span> for higher bonuses and better benefits than standard applications.
           </p>
-          <div className="mt-3 grid grid-cols-2 gap-2 text-xs">
-            <div className="bg-white/70 p-2 rounded flex items-center">
+          <div className="mt-3 flex flex-wrap justify-center gap-2 text-xs">
+            <div className="bg-white/70 px-3 py-1.5 rounded flex items-center">
               <Star size={14} className="text-amber-500 mr-1.5" />
-              <span>Higher sign-up bonuses</span>
+              <span>Higher bonuses</span>
             </div>
-            <div className="bg-white/70 p-2 rounded flex items-center">
+            <div className="bg-white/70 px-3 py-1.5 rounded flex items-center">
               <Star size={14} className="text-amber-500 mr-1.5" />
-              <span>Special student rates</span>
+              <span>Special rates</span>
             </div>
-            <div className="bg-white/70 p-2 rounded flex items-center">
+            <div className="bg-white/70 px-3 py-1.5 rounded flex items-center">
               <Star size={14} className="text-amber-500 mr-1.5" />
-              <span>Fee waivers for students</span>
-            </div>
-            <div className="bg-white/70 p-2 rounded flex items-center">
-              <Star size={14} className="text-amber-500 mr-1.5" />
-              <span>Easier approval paths</span>
+              <span>Fee waivers</span>
             </div>
           </div>
         </motion.div>
