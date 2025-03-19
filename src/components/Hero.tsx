@@ -64,8 +64,26 @@ const Hero = () => {
           </div>
           <p className="text-sm text-slate-700">
             Access our <span className="font-semibold">exclusive bank offers and referrals</span> that you won't find elsewhere. 
-            Using our special links gives you better bonuses and benefits than standard applications!
+            We've spent months researching and negotiating special deals so you get better bonuses and benefits than standard applications!
           </p>
+          <div className="mt-3 grid grid-cols-2 gap-2 text-xs">
+            <div className="bg-white/70 p-2 rounded flex items-center">
+              <Star size={14} className="text-amber-500 mr-1.5" />
+              <span>Higher sign-up bonuses</span>
+            </div>
+            <div className="bg-white/70 p-2 rounded flex items-center">
+              <Star size={14} className="text-amber-500 mr-1.5" />
+              <span>Special student rates</span>
+            </div>
+            <div className="bg-white/70 p-2 rounded flex items-center">
+              <Star size={14} className="text-amber-500 mr-1.5" />
+              <span>Fee waivers for students</span>
+            </div>
+            <div className="bg-white/70 p-2 rounded flex items-center">
+              <Star size={14} className="text-amber-500 mr-1.5" />
+              <span>Easier approval paths</span>
+            </div>
+          </div>
         </motion.div>
         
         <motion.div
